@@ -28,3 +28,5 @@ Run like this:
 python CheckIp.py your_config_file.ini
 
 To test, remove the "old_ip.txt" file and run.
+
+Feel free to create additional features!
