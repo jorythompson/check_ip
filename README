@@ -14,12 +14,13 @@ PASSWORD:passwordWithoutQuotes
 [Message]
 SUBJECT:IP Address at home changed!  You can put %OLD_IP_ADDRESS% here too!
 BODY:IP Address at home changed from %OLD_IP_ADDRESS%. Time to update your favorite ISP with
- %NEW_IP_ADDRESS%
+ %NEW_IP_ADDRESS%.  Note the preceeding space to designate a new line
 
 Copy default.ini to another file and make the appropriate changes.
 
-Note that the message and body may contain two keywords (%OLD_IP_ADDRESS% and %NEW_IP_ADDRESS%).
-These keywords are replaced with the previous and current ones (if it has changed.)
+Feel free to change the subject and body.  New lines are created by adding a new line with a leading space.
+Note that the subject and body may contain two keywords (%OLD_IP_ADDRESS% and %NEW_IP_ADDRESS%).
+These keywords are replaced with the previous and current ones before sending the email (if the external IP address has changed).
 
 Note that this script will NOT email you if there are no changes.
 
