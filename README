@@ -1,0 +1,7 @@
+Checks the external IP address of your router and emails you if it changes
+This is useful if you access your dynamic IP network from outside of your (generally home) network.
+I am running it on my ReadyNAS so it is minimumly intrusive.
+It will create a file the first time it runs that holds the current IP address.
+Whenever it runs again (instructons for setting up a chron is in the script) it checks the extern IP address and
+compares it to the old one.
+If it has changed, it will email you and update the current IP file.
