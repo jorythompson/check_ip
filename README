@@ -29,4 +29,7 @@ python CheckIp.py your_config_file.ini
 
 To test, remove the "old_ip.txt" file and run.
 
+There is a lot of room for testing as I have only tried it on a handfull of OS and only my DD-WRT router.  It should
+work on other routers, but you know how it goes...
+
 Feel free to create additional features!
