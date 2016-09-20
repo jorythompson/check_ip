@@ -1,7 +1,29 @@
 Checks the external IP address of your router and emails you if it changes
 This is useful if you access your dynamic IP network from outside of your (generally home) network.
-I am running it on my ReadyNAS so it is minimumly intrusive.
+I have tested it on a ReadyNAS, Windows 7, Ubuntu 16 with a DD-WRT router and gmail.
 It will create a file the first time it runs that holds the current IP address.
-Whenever it runs again (instructons for setting up a chron is in the script) it checks the extern IP address and
-compares it to the old one.
+Whenever it runs again (instructons for setting up a chron is in the script) it checks the extern IP address and compares it to the old one.
 If it has changed, it will email you and update the current IP file.
+
+The configuration file has two sections:
+[Email]
+FROM:yourEmailAddress@goes.here
+TO:whereYouWantToSendAlerts@goes.here
+PASSWORD:passwordWithoutQuotes
+
+[Message]
+SUBJECT:IP Address at home changed!  You can put %OLD_IP_ADDRESS% here too!
+BODY:IP Address at home changed from %OLD_IP_ADDRESS%. Time to update your favorite ISP with
+ %NEW_IP_ADDRESS%
+
+Copy default.ini to another file and make the appropriate changes.
+
+Note that the message and body may contain two keywords (%OLD_IP_ADDRESS% and %NEW_IP_ADDRESS%).
+These keywords are replaced with the previous and current ones (if it has changed.)
+
+Note that this script will NOT email you if there are no changes.
+
+Run like this:
+python CheckIp.py your_config_file.ini
+
+To test, remove the "old_ip.txt" file and run.
