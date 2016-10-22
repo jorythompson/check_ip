@@ -31,9 +31,12 @@ import ConfigParser
 # this file is installed in /root/bin
 # the crontab entry (crontab -e) looks something like this:
 # 0 * * * * /root/bin/CheckIp.py
+#
+# OR you can put a script into /etc/cron.daily (or under /etc/cron.X) and run the following to verify:
+# run-parts --test /etc/cron.daily
 ############################################################
 
-IP_FILE = "old_ip.txt"
+IP_FILE = "/tmp/old_ip.txt"
 CONFIG_FILE = "CheckIp.ini"
 EMAIL_SECTION = "Email"
 MESSAGE_SECTION = "Message"
